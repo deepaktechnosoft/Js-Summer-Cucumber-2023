@@ -26,6 +26,18 @@ class LandingPage {
         return await $(this.loginBtnLocator).isEnabled()
     }
 
+    async enterLoginEmail(loginEmail) {
+        await $(this.loginEmailLocator).setValue(loginEmail)
+    }
+
+    async enterLoginPassword(loginPwd) {
+        await $(this.loginPwdLocator).setValue(loginPwd)
+    }
+
+    async clickLoginButton() {
+        await $(this.loginBtnLocator).click();
+    }
+
 
 
 }
