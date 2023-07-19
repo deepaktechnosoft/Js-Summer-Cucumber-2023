@@ -1,7 +1,7 @@
 const { Then, When } = require("@wdio/cucumber-framework");
-const LandingPage = require("../Pages/LandingPage");
+const LandingPage = require("../../Pages/Facebook/LandingPage");
 const { expect } = require("chai");
-const LoginErrorPage = require("../Pages/LoginErrorPage");
+const LoginErrorPage = require("../../Pages/LoginErrorPage");
 
 Then(/^I Verify login email field is enabled$/, async function () {
     const lPage = new LandingPage();
@@ -18,7 +18,7 @@ Then(/^I Verify login button is enabled$/, async function () {
     expect(await lPage.isLoginButtonEnabled(), 'Login button is NOT enabled').to.be.true;
 });
 
-When(/^I enter "(.+)" in login email$/, async function (email) {
+When(/^I enter "()" in login email$/, async function (email) {
     const lPage = new LandingPage();
     await lPage.enterLoginEmail(email);
 });
