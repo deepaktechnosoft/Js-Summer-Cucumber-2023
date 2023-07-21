@@ -1,7 +1,6 @@
 const { Given, When, Then } = require("@wdio/cucumber-framework");
-const LandingPage = require("../Pages/LandingPage");
-const MessengerLandingPage = require("../Pages/MessengerLandingPage");
-const MessengerLoginPage = require("../Pages/MessengerLoginPage");
+const LandingPage = require("../../../Test/Pages/Facebook/LandingPage");
+const MessengerLoginPage = require("../../../Test/Pages/Facebook/MessengerLoginPage");
 const { expect } = require("chai");
 
 Given(/^I am on facebook landing page$/, async function () {
@@ -15,7 +14,7 @@ Given(/^I click on Messenger link$/, async function () {
 
 
 When(/^I click on Log in button$/, async function () {
-    const messengerLandingPage = new MessengerLandingPage();
+    const messengerLandingPage = new messengerLandingPage();
     await messengerLandingPage.clickLogInButton();
 });
 

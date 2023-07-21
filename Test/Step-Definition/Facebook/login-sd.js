@@ -1,7 +1,7 @@
 const { Then, When } = require("@wdio/cucumber-framework");
-const LandingPage = require("../../Pages/Facebook/LandingPage");
+const LandingPage = require("../../../Test/Pages/Facebook/LandingPage");
 const { expect } = require("chai");
-const LoginErrorPage = require("../../Pages/LoginErrorPage");
+const LoginErrorPage = require("../../../Test/Pages/Facebook/LoginErrorPage");
 
 Then(/^I Verify login email field is enabled$/, async function () {
     const lPage = new LandingPage();

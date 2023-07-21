@@ -23,7 +23,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './Test/Features/*.feature'
+        './Test/Features/**/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -130,7 +130,7 @@ exports.config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./Test/Step-Definition/*.js'],
+        require: ['./Test/Step-Definition/**/*.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
