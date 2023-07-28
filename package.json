@@ -20,7 +20,8 @@
   "homepage": "https://github.com/deepaktechnosoft/Js-Summer-Cucumber-2023#readme",
   "dependencies": {
     "@wdio/cli": "^8.11.4",
-    "chai": "^4.3.7"
+    "chai": "^4.3.7",
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "@wdio/allure-reporter": "^8.11.3",

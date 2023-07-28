@@ -1,5 +1,7 @@
+@search @regression
 Feature: Search
 
+    @search-1 @sanity
     Scenario: Verify user can search using auto-suggestion
         Given I am on hotels landing page
         When I enter bor in Search box

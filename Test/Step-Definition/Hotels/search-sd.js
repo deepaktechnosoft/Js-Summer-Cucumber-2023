@@ -26,11 +26,17 @@ When(/^I click (.+) button$/, async function(buttonName) {
             await browser.pause(5000);
             break;
         case 'Sign in':
+            // code to click to Sign-in button
+            break;
+        case 'Dates':
+            landingPage.openCalendar();
+            // 
             break;
         default:
             break;
     }
 })
+
 
 Then(/^I verify Going to has the (.+) on Search Results page$/, async function (expGoingTo) {
     goingToOnWeb = await searchResultPage.getGoingToText();
