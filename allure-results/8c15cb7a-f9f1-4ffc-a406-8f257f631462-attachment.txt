@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": ".//div[contains(., \"email or mobile number\") and not(.//div)]"
-}

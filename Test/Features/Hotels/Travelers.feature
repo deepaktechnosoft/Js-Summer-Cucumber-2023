@@ -8,7 +8,7 @@ Feature: Travelers
             And I change children count to 2
             And I select child-1 age as 2
             And I select child-2 age as Under 1
-            And I click on Done button
+            And I click on Done button on travelers
         Then I verify the travelers count is updated correctly
     
     @travelers-2

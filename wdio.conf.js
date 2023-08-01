@@ -124,7 +124,12 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: [['allure', {outputDir: 'allure-results'}]],
+    reporters: [['allure', { 
+                                outputDir: 'ReportData/allure-results',
+                                disableWebdriverStepsReporting: true,
+                                useCucumberStepReporter: true,
+                                disableWebdriverScreenshotsReporting: false
+                            }]],
 
     //
     // If you are using Cucumber you need to specify the location of your step definitions.
@@ -229,7 +234,8 @@ exports.config = {
      * @param {ITestCaseHookParameter} world    world object containing information on pickle and test step
      * @param {object}                 context  Cucumber World object
      */
-    // beforeScenario: function (world, context) {
+    // beforeScenario: async function (world, context) {
+    //     await browser.url('/')
     // },
     /**
      *
@@ -251,8 +257,11 @@ exports.config = {
      * @param {number}             result.duration  duration of scenario in milliseconds
      * @param {object}             context          Cucumber World object
      */
-    // afterStep: function (step, scenario, result, context) {
-    // },
+    afterStep: async function (step, scenario, { error, duration, passed }, context) {
+        if (error) {
+            await browser.takeScreenshot();
+        }
+    },
     /**
      *
      * Runs after a Cucumber Scenario.

@@ -18,7 +18,7 @@ Then(/^I Verify login button is enabled$/, async function () {
     expect(await lPage.isLoginButtonEnabled(), 'Login button is NOT enabled').to.be.true;
 });
 
-When(/^I enter "()" in login email$/, async function (email) {
+When(/^I enter "(.+)" in login email$/, async function (email) {
     const lPage = new LandingPage();
     await lPage.enterLoginEmail(email);
 });

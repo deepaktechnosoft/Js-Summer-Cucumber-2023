@@ -44,21 +44,14 @@ class LandingPage {
         return disabledDateCount;
     }
 
-
-
-
     async goToCalendar(monthYear) {
 
         await browser.pause(5000)
 
         const previousCalendarArrowEnabled = await $(this.previousCalendarLocator).isEnabled();
 
-        console.log(`\n\n previousCalendarArrowEnabled ---> ${previousCalendarArrowEnabled}`);
-
         for (let i=0 ; i<10 ; i++) {
             let leftCalendarHeading = await $(this.leftCalendarHeadingLocator).getText();
-
-            console.log(`\n\n leftCalendarHeading ---> ${leftCalendarHeading}`);
 
             if (leftCalendarHeading.localeCompare(monthYear) !== 0) {
                 if(previousCalendarArrowEnabled) {
@@ -73,7 +66,9 @@ class LandingPage {
     }
 
 
-
+    async openCalendar() {
+        await $(this.datesInputOpenLocator).click();
+    }
 
     // functions to interact with elements on Landing Page
     async enterDestination(destinationString) {
@@ -160,11 +155,6 @@ class LandingPage {
         const travelersInfo = await $(this.travelersInfoLocator).getAttribute('value');
         return travelersInfo.split(' ')[0]
     }
-
-    async openCalendar() {
-        await $(this.datesInputOpenLocator).click();
-    }
-
 
 }
 module.exports = LandingPage;

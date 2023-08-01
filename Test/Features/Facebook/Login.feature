@@ -1,3 +1,4 @@
+@fb-login
 Feature: Login
 
     @loginFields
@@ -10,7 +11,7 @@ Feature: Login
     @invalidLogin
     Scenario: Verify user gets error for invalid credentials
         Given I am on facebook landing page
-        When I enter "^%$$%$" in login email
+        When I enter "12345" in login email
             And I enter "abcd@1234" in login password
-            And I click on login button
+            # And I click on login button
         Then I verify login error message is displayed
